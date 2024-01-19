@@ -28,12 +28,8 @@ To run this project, you'll need a machine with Java installed. Follow these ste
 
 Contributions to the project are welcome. If you have improvements or bug fixes, feel free to open a pull request or create an issue.
 
-## License
-
-[Insert License Information Here]
-
 ## Contact
 
 Alexandre Rodrigues - alexmmrod2.2@gmail.com
 
-Project Link: [Repository URL, if applicable]
+Project Link: https://github.com/AlexRode/TicTacToe
