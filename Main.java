@@ -1,8 +1,12 @@
 import java.util.Scanner;
 
 public class Main {
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        GameMenu window = new GameMenu();
+		
+        window.open();
         int gameTypeChoice = GameMenu.showMenu(scanner); // Mostra o menu e obtém a escolha do tipo de jogo
 
         // Determinar se o jogo é contra outro jogador ou contra o computador

@@ -1,6 +1,81 @@
 import java.util.Scanner;
 
+import javax.swing.JButton;
+
+import javax.swing.JFrame;
+import java.awt.Insets;
+
+import javax.swing.WindowConstants;
+
+
+
+import java.awt.Dimension;
+
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+
+
 public class GameMenu {
+private JFrame MenuPanel;
+private final int width = 800; // Largura do canvas
+private final int height = 600; // Altura do canvas
+
+public GameMenu() {
+    MenuPanel = new JFrame("TicTacToe");
+    MenuPanel.setPreferredSize(new Dimension(width, height));
+		// para que o botao de fechar a janela termine a aplicacao
+		MenuPanel.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		
+		addFrameContent();
+		
+		// para que a janela se redimensione de forma a ter todo o seu conteudo visivel
+		MenuPanel.pack();
+	}
+
+	public void open() {
+		// para abrir a janela (torna-la visivel)
+		MenuPanel.setVisible(true);
+	}
+
+    private void addFrameContent() {
+		
+		
+		/* para organizar o conteudo em grelha (linhas x colunas)
+		se um dos valores for zero, o numero de linhas ou colunas (respetivamente) fica indefinido,
+		e estas sao acrescentadas automaticamente */
+		MenuPanel.setLayout(new GridBagLayout());
+    GridBagConstraints gbc = new GridBagConstraints();
+
+    JButton buttonLocal = new JButton("Player vs Player");
+    JButton buttonAi = new JButton("Player vs Computer");
+
+    // Configurações para centralizar os componentes
+    gbc.gridwidth = GridBagConstraints.REMAINDER; // Faz com que o componente seja o último na sua linha.
+    gbc.fill = GridBagConstraints.HORIZONTAL; // Faz com que o botão expanda-se horizontalmente.
+    gbc.anchor = GridBagConstraints.CENTER; // Centraliza o componente.
+   
+    gbc.insets = new Insets(10, 0, 10, 0);
+   
+    // Adiciona os botões ao painel com as restrições definidas
+    
+        buttonLocal.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+                TicTacToeGUI.main(null);
+             
+			}
+		});
+        MenuPanel.add(buttonLocal, gbc);
+        MenuPanel.add(buttonAi, gbc);
+	}
+		
+
 
     public static int showMenu(Scanner scanner) {
         System.out.println("Tic-Tac-Toe Game");
