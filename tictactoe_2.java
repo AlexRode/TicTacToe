@@ -27,11 +27,11 @@ public class tictactoe_2 {
     public void playGame(Scanner scanner, boolean againstComputer) {
         while (!board.isGameFinished()) {
             board.printBoard();
-
+    
             if (againstComputer && currentPlayer == aiSymbol) {
                 ai.makeMove(board);
                 switchPlayer();
-            } else if (currentPlayer == playerSymbol) {
+            } else {
                 System.out.println("Player " + currentPlayer + ", enter your move (row[1-3] column[1-3]): ");
                 int row = scanner.nextInt() - 1;
                 int col = scanner.nextInt() - 1;
@@ -43,7 +43,7 @@ public class tictactoe_2 {
             }
         }
         board.printBoard();
-       // announceResult();
+        announceResult(); // Anuncia o resultado após o jogo terminar
     }
  
    
